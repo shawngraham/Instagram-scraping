@@ -4,6 +4,7 @@ function scrape_insta_hash($tag) {
 	$shards = explode('window._sharedData = ', $insta_source);
 	$insta_json = explode(';</script>', $shards[1]); 
 	$insta_array = json_decode($insta_json[0], TRUE);
+	print_r(array_values($insta_array)); // shows all the other available info in the array. now to figure out how to sort that out.
 	return $insta_array; // this return a lot things print it and see what else you need
 }
 $tag = 'pakistan'; // tag for which ou want images 
